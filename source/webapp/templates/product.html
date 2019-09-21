@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Товар{% endblock %}
+{% block content %}
+    <div class="card text-white bg-dark" style="width: 100%;">
+        <div class="card-header">{{ product.name }}</div>
+        <ul class="list-group list-group-flush text-dark">
+            <li class="list-group-item"><b>Категория: </b>{{ product.get_category_display }}</li>
+            <li class="list-group-item" style="white-space: pre-wrap"><b>Описание: </b>{{ product.description }}</li>
+            <li class="list-group-item"><b>Остаток: </b>{{ product.amount }}</li>
+            <li class="list-group-item"><b>Цена: </b>{{ product.price }}</li>
+        </ul>
+    </div>
+{#    <button type="submit" class="btn btn-dark" value="Submit" id="input"><a href="{% url 'task_edit' task.pk %}">Обновить</a></button>#}
+{% endblock %}
