@@ -1,33 +1,23 @@
 {% extends 'base.html' %}
 
 {% block menu %}
-{#    <li><a href="{% url 'task_add' %}">Добавить товар</a></li>#}
+{#    <li><a href="{% url 'product_add' %}">Добавить товар</a></li>#}
 {% endblock %}
 
 {% block content %}
-    <h1>Список товаров:</h1>
-    <table class="table">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Название</th>
-                <th scope="col">Описание</th>
-                <th scope="col">Категория</th>
-                <th scope="col">Остаток</th>
-                <th scope="col">Цена</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for product in products %}
-                <tr>
-                    <th scope="row">{{forloop.counter}}</th>
-                    <td><a href="{% url 'product_detail' product.pk %}">{{ product.name}}</a></td>
-                    <td>{{ product.description }}</td>
-                    <td class="change_category">{{ product.get_category_display }}</td>
-                    <td>{{ product.amount }}</td>
-                    <td>{{ product.price }} сом</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <h1>Список товаров</h1>
+    <div class="card-group">
+        {% for product in products %}
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name}}</h5>
+              <p class="card-text"><b>Категория:</b> {{ product.get_category_display }}</p>
+              <p class="card-text"><b>Цена:</b> {{ product.price }}</p>
+            </div>
+            <div class="card-footer">
+              <a href="{% url 'product_detail' product.pk %}">Подробнее</a>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
 {% endblock %}
