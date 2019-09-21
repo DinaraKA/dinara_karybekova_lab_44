@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Удалить товар{% endblock %}
+{% block content %}
+    <form method="POST" action="{% url 'product_delete' product.pk %}">
+        {% csrf_token %}
+        <div class="card text-center" style="width: 100%;">
+            <div class="card-header text-white bg-dark">Вы уверены, что хотите удалить товар?</div>
+            <div class="card-body text-left">
+                <h5 class="card-title">Товар: {{ product.name }}</h5>
+                <p class="card-text">Описание: {{ product.description }}</p>
+                <p class="card-text">Остаток: {{ product.amount }}</p>
+                <p class="card-text">Цена: {{ product.price }} сом</p>
+            </div>
+            <button type="submit" class="btn btn-dark" value="Submit"><a href="{% url 'index' %}">Да</a></button>
+            <button class="btn btn-dark"><a href="{% url 'index' %}">Нет</a></button>
+
+        </div>
+    </form>
+{% endblock %}
