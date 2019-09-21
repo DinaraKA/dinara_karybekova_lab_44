@@ -1,0 +1,75 @@
+[
+{
+  "model": "webapp.product",
+  "pk": 1,
+  "fields": {
+    "name": "\u0421\u0430\u043f\u0438\u0435\u043d\u0441",
+    "description": "\u041a\u043d\u0438\u0433\u0430 \u043e \u0438\u0441\u0442\u043e\u0440\u0438\u0438 \u0447\u0435\u043b\u043e\u0432\u0435\u0447\u0435\u0441\u0442\u0432\u0430",
+    "category": "book",
+    "amount": 15,
+    "price": "980.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 2,
+  "fields": {
+    "name": "\u041c\u0438\u0448\u043a\u0430",
+    "description": "\u043f\u043b\u044e\u0448\u0435\u0432\u0430\u044f \u0438\u0433\u0440\u0443\u0448\u043a\u0430. \u041f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0441\u0442\u0432\u043e \u041a\u0438\u0442\u0430\u0439",
+    "category": "toy",
+    "amount": 3,
+    "price": "1200.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 3,
+  "fields": {
+    "name": "\u0427\u0435\u043b\u0441\u0438",
+    "description": "\u043e\u0441\u0435\u043d\u043d\u0438\u0435 \u043f\u043e\u043b\u0443\u0431\u043e\u0442\u0438\u043d\u043a\u0438, \u0447\u0435\u0440\u043d\u044b\u0435",
+    "category": "shoe",
+    "amount": 3,
+    "price": "6890.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 4,
+  "fields": {
+    "name": "\u041f\u043b\u0430\u0449",
+    "description": "\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u0432\u043e\u0434\u043e\u043d\u0435\u043f\u0440\u043e\u043d\u0438\u0446\u0430\u0435\u043c\u044b\u0439 \u043f\u043b\u0430\u0449. \u041f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0441\u0442\u0432\u043e \u0418\u0442\u0430\u043b\u0438\u044f",
+    "category": "cloth",
+    "amount": 6,
+    "price": "3400.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 5,
+  "fields": {
+    "name": "\u0413\u0438\u043c\u043d",
+    "description": "\u0410\u0432\u0442\u043e\u0440 \u0410\u0439\u043d \u0420\u0435\u043d\u0434",
+    "category": "book",
+    "amount": 0,
+    "price": "560.00"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$EgXIQSP1mfeA$KvAHU0mGl78yVhS4NBpjRTG3+IoIpGUGKye7XnrZxa4=",
+    "last_login": "2019-09-21T03:41:31.286Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-09-19T20:42:20.569Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
