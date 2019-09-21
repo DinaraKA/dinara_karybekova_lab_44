@@ -15,6 +15,7 @@
             </div>
             <div class="card-footer">
               <a href="{% url 'product_detail' product.pk %}">Подробнее</a>
+              <a class="icons" href="{% url 'product_edit' product.pk %}"><i class="fas fa-pencil-alt"></i></a>
             </div>
           </div>
         {% endfor %}

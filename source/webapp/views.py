@@ -23,13 +23,37 @@ def product_create_view(request, *args, **kwargs):
     elif request.method == 'POST':
         form = ProductForm(data=request.POST)
         if form.is_valid():
-            Product.objects.create(
+            product = Product.objects.create(
                 name=form.cleaned_data['name'],
                 description=form.cleaned_data['description'],
                 category=form.cleaned_data['category'],
                 amount=form.cleaned_data['amount'],
                 price=form.cleaned_data['price']
             )
-            return redirect('index')
+            return redirect('product_detail', pk=product.pk)
         else:
             return render(request, 'create.html', context={'form': form})
+
+def product_edit(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    if request.method == 'GET':
+        form = ProductForm(data={
+            'name': product.name,
+            'description': product.description,
+            'category': product.category,
+            'amount': product.amount,
+            'price': product.price
+        })
+        return render(request, 'edit.html', context={'form': form, 'product': product})
+    elif request.method == 'POST':
+        form = ProductForm(data=request.POST)
+        if form.is_valid():
+            product.name = form.cleaned_data['name']
+            product.description = form.cleaned_data['description']
+            product.category = form.cleaned_data['category']
+            product.amount = form.cleaned_data['amount']
+            product.price = form.cleaned_data['price']
+            product.save()
+            return redirect('product_detail', pk=product.pk)
+        else:
+            return render(request, 'edit.html', context={'form': form, 'product': product})
