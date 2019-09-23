@@ -4,7 +4,7 @@ from webapp.form import ProductForm
 
 
 def index_view(request):
-    products = Product.objects.filter(amount__gt=0).order_by('name','category')
+    products = Product.objects.filter(amount__gt=0).order_by('category','name')
     return render(request, 'index.html', context={
         'products': products
     })

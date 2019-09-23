@@ -7,5 +7,5 @@ class ProductForm(forms.Form):
     name = forms.CharField(max_length=100, required=True, label='Название')
     description = forms.CharField(max_length=2000, required=True, label='Описание',widget=widgets.Textarea)
     category = forms.ChoiceField(label='Категория', choices=PRODUCT_CATEGORY_CHOICES)
-    amount = forms.IntegerField(label='Остаток', required=True)
-    price = forms.IntegerField(label='Цена', required=True)
+    amount = forms.IntegerField(min_value=0, label='Остаток', required=True)
+    price = forms.DecimalField(max_digits=7, decimal_places=2, label='Цена', required=True)

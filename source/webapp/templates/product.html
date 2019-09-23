@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 
 {% block title %}Товар{% endblock %}
+{% block menu %}
+    <li><a href="{% url 'product_edit' product.pk %}">Обновить</a></li>
+    <li><a href="{% url 'product_delete' product.pk %}">Удалить</a></li>
+{% endblock %}
 {% block content %}
     <div class="card text-white bg-dark" style="width: 100%;">
         <div class="card-header">{{ product.name }}</div>
@@ -11,5 +15,4 @@
             <li class="list-group-item"><b>Цена: </b>{{ product.price }} сом</li>
         </ul>
     </div>
-{#    <button type="submit" class="btn btn-dark" value="Submit" id="input"><a href="{% url 'product_edit' product.pk %}">Обновить</a></button>#}
 {% endblock %}

@@ -91,10 +91,12 @@ textarea {
     color: darkviolet;
 }
 .card {
-    margin-bottom: 20px;
-    width: 23%;
+    width: 30%;
     margin: 10px;
     display: inline-block;
+    border: 2px solid rgb(51,58,64);
+    border-radius: 8px;
+    padding: auto;
 }
 .card-footer {
     display: flex;
@@ -102,6 +104,7 @@ textarea {
 }
 .card-footer a {
     color: white;
+    height: 15px;
 }
 .icons {
     margin-left: 8px;
